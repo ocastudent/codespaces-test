@@ -136,11 +136,12 @@ class Game
         puts "#{@defender.name}は気絶した" unless defender.is_alive # 戦闘不能メッセージ
     end
     def execute_escape(character)
+        chosen_hero = character.sample 
         if rand < 0.7
-            puts "#{character.name}は逃げ出した！"
+            puts "#{chosen_hero.name}は逃げ出した！"
             @escape_flag = true # 逃げるフラグを立てる
         else
-            puts "#{character.name}敵に回り込まれた！"
+            puts "#{chosen_hero.name}敵に回り込まれた！"
             @escape_flag = false
         end
     end
